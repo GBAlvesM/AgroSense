@@ -25,7 +25,7 @@ Com a crescente demanda por produtividade, sustentabilidade e qualidade agrícol
 •	**Eficiência:** Garantir crescimento saudável e maior produtividade.<br>
 
 ## Trello
-- **Plataforma de administração:** utilizamos a plataforma Trello para organizar tarefas e acompanhar o progresso do projeto, no link: 
+- **Plataforma de administração:** utilizamos a plataforma Trello para organizar tarefas e acompanhar o progresso do projeto, no link:(`https://trello.com/b/fyvdA3Ct/batatech`)
 
 ## Contribuição
 
