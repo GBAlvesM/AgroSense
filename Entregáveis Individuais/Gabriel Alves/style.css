@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(211, 184, 97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#card1 {
+    background-color: #ffffff;
+    width: 750px;
+    height: fit-content;
+    border-radius: 20px;
+
+    padding: 20px;
+    text-align: center;
+
+}
+
+div#inputs {
+    text-align: left;
+    padding: 2px;
+}
+
+#botao {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    height: 35px;
+    width: 90px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(180, 255, 83);
+    font-weight: bolder;
+
+    transition-duration: 0.3s;
+}
+
+#botao:hover {
+    background-color: rgb(55, 94, 4);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#outputs {
+    text-align: justify;
+}
+
+.ganhos {
+    color: green;
+    font-style: italic;
+    text-decoration: underline;
+}
