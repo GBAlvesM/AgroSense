@@ -5,6 +5,7 @@ body, html {
     padding: 0px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.15em;
 }
 
 body {
@@ -22,14 +23,26 @@ div#card1 {
     height: fit-content;
     border-radius: 20px;
 
-    padding: 20px;
-    text-align: center;
-
+    padding: 15px;
 }
+
+#titulo {
+    text-align: center;
+}
+
 
 div#inputs {
     text-align: left;
     padding: 2px;
+}
+
+#inputs input {
+    border: 1px solid rgb(60, 99, 9);
+    border-radius: 5px;
+    height: 25px;
+
+    font-size: 1.1rem;
+
 }
 
 #botao {
@@ -37,8 +50,10 @@ div#inputs {
     margin: 0 auto;
     margin-top: 20px;
 
-    height: 35px;
-    width: 90px;
+    height: 45px;
+    width: fit-content;
+
+    font-size: 1rem;
 
     border: none;
     border-radius: 5px;
