@@ -24,7 +24,7 @@
     <br>
     <button onclick="calcular()">Calcular</button>
     <br>
-    <div id="divmsg"></div>
+    <div id="div_msg"></div>
 
 
 </body>
@@ -45,9 +45,12 @@
         var maximovenda = maximoprod / 50 * 80;
 
         //Produção atual val
-        var vendaatual = producaoatual / 50  * 80
+        var vendaatual = producaoatual / 50  * 80;
     
     
+        if(areaplantada == ''|| producao == ''){
+             alert('Insira um número válido!');
+        }
     divmsg.innerHTML = "Sem os nossos serviços, esses foram seus resultados: " + "<div>" + " Sua produtividade total é de:" + "<span style ='color: blue;'>"+ producaoatual + "kg." + "<div>" + "Receita atual bruta: <b style='color: blue;'> R$"+ vendaatual.toFixed(2) + "</span><div>" + "<br><span style = 'color:black'>Com os nossos serviços, esses foram seus resultados:" + "<div>" + "Sua produtividade pode ir de: <b style='color: green;'>"+minimoprod+"kg"+ " até <b style='color: green;'> "+maximoprod+ " kg."+ "<div>"+  
     "<br>Receita total bruta: <b style='color: green;'>R$" + minimovenda.toFixed(2)+ " até <b style='color: green;'>R$"+ maximovenda.toFixed(2) + "</b>"
       
