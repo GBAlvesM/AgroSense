@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+
+<body>
+    <h1>Simulador Financeiro Batatech</h1>
+    <h3><b> Faça sua simulação aqui, e verifique o quanto você pode melhorar sua produtividade! </b></h3>
+    <div> <br><br>
+        <h3><b>Preencha os campos seguintes:</b></h3>
+    </div>
+    <div>
+        Insira a área plantada (ha)* <br><input id="ipt_he"> <br><br>
+        Insira sua produção por hectare (kg/ha)* <br><input id="ipt_producao"><br><br>
+    </div>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <br>
+    <div id="div_msg"></div>
+
+
+</body>
+<script>
+
+    function calcular() {
+        //Pegar valores obtidos nos inputs
+        var areaplantada = Number(ipt_he.value);
+        var producao = Number(ipt_producao.value);
+
+        var producaoatual = areaplantada * producao;
+        var minimoprod = producaoatual * 1.05;
+        var maximoprod = producaoatual * 1.2;
+
+        var minimovenda = minimoprod / 50 * 53.3;
+        var maximovenda = maximoprod / 50 * 80;
+
+        var vendaatual = producaoatual / 50 * 90;
+
+
+        div_msg.innerHTML = `Sem nossos serviços:    
+<br>Produtividade: <b style="color: blue;">${producaoatual}kg</b>
+<br>Receita bruta: <b style="color: blue;">R$ ${vendaatual.toFixed(2)}</b>
+
+<br>Com nossos serviços:
+<br>Produtividade: <b style="color: green;">${minimoprod}kg</b> a <b style="color: green;">R$${maximoprod}</b>
+<br>Receita bruta: <b style="color: green;">R$ ${minimovenda.toFixed(2)}</b> a <b style="color: green;">R$ ${maximovenda.toFixed(2)}kg</b>`
+    }
+        
+</script>
+
+</html>
