@@ -11,8 +11,9 @@ body, html {
 body {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(211, 184, 97);
+    background-color: #174219;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -23,7 +24,7 @@ div#card1 {
     height: fit-content;
     border-radius: 20px;
 
-    padding: 15px;
+    padding: 25px;
 }
 
 #titulo {
@@ -37,7 +38,7 @@ div#inputs {
 }
 
 #inputs input {
-    border: 1px solid rgb(60, 99, 9);
+    border: 1px solid #174219;
     border-radius: 5px;
     height: 25px;
 
@@ -57,14 +58,14 @@ div#inputs {
 
     border: none;
     border-radius: 5px;
-    background-color: rgb(180, 255, 83);
+    background-color: #7CB342;
     font-weight: bolder;
 
     transition-duration: 0.3s;
 }
 
 #botao:hover {
-    background-color: rgb(55, 94, 4);
+    background-color: #174219;
     color: #ffffff;
     cursor: pointer;
 }
