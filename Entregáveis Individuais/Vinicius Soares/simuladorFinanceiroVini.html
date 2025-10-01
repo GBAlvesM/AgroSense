@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>Simulador Financeiro AgroSense</h1>
+    <h3><b> Simule aqui, e veja o quanto podemos te ajudar </b></h3>
+
+    <div> 
+        <i>Esse simulador financeiro tem como objetivo calcular a oportunidade que existe ao usar nosso equipamento IoT.<br>
+            Sua produtividade pode aumentar em até 20%;</i><br><br>
+    </div>
+
+    <div> 
+        Insira a área plantada (ha)* <br><input id="ipthe"> <br><br>
+        Insira sua produção por hectare (kg/ha)* <br><input id="iptproducao"><br><br>
+    </div><br>
+
+    <button onclick="calcular()">Calcular</button><br>
+
+    <div id="divmsg"></div>
+
+
+</body>
+
+<script>
+
+    function calcular() {
+
+        //Pegar valores 
+        var areaplantada = Number(ipthe.value);
+        var producao = Number(iptproducao.value);
+        
+        //Produção 
+        var producaoatual = areaplantada * producao;
+        var minoprod = producaoatual * 1.05;
+        var maxprod = producaoatual * 1.2;
+
+        //Calculo saca
+        var minimovenda = minoprod / 50 * 80;
+        var maximovenda = maxprod / 50 * 80;
+
+        //Valor da Produção atual
+        var vendaatual = producaoatual / 50  * 80;
+    
+    
+        if(areaplantada == ''|| producao == ''){
+             alert('Insira um valor válido!');
+        }
+        divmsg.innerHTML = "Sem os nossos serviços, esses foram seus resultados: " + "<div>" + " Sua produtividade total é de:" + "<span style ='color: blue;'>"+ producaoatual + "kg." + "<div>" + "Receita atual bruta: <b style='color: blue;'> R$"+ vendaatual.toFixed(2) + "</span><div>" + "<br><span style = 'color:black'>Com os nossos serviços, esses foram seus resultados:" + "<div>" + "Sua produtividade pode ir de: <b style='color: green;'>"+minprod+"kg"+ " até <b style='color: green;'> "+maxprod+ " kg."+ "<div>"+  
+        "<br>Receita total bruta: <b style='color: green;'>R$" + minimovenda.toFixed(2)+ " até <b style='color: green;'>R$"+ maximovenda.toFixed(2) + "</b>"
+      
+    }
+
+
+</script>
+
+</html>
