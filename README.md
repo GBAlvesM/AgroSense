@@ -1,4 +1,4 @@
-# BataTech
+# AgroSense
 
 <img src="https://portaladama.com/wp-content/uploads/2022/05/051122_imagem_batata_adobeStock_66913132-1-scaled.jpeg">
 
@@ -8,17 +8,17 @@ Buscamos uma solução IoT inovadora para monitoramento em tempo real das condi�
 
 ## Sobre a Empresa
 
-A BataTech é uma empresa focada em soluções tecnológicas para agricultura de precisão. Nosso objetivo é apoiar agricultores com sistemas inteligentes de monitoramento, análise de dados e automação, promovendo maior produtividade, sustentabilidade e eficiência na gestão das plantações de batata inglesa.
+A AgroSense é uma empresa focada em soluções tecnológicas para agricultura de precisão. Nosso objetivo é apoiar agricultores com sistemas inteligentes de monitoramento, análise de dados e automação, promovendo maior produtividade, sustentabilidade e eficiência na gestão das plantações de batata inglesa.
 
 ## Contexto
 
-A batata inglesa é uma cultura sensível a variações de umidade do solo e temperatura. Excesso ou falta de água, assim como condições térmicas inadequadas, podem prejudicar o crescimento das raízes, reduzir o rendimento e afetar a qualidade do tubérculo.
+A batata inglesa é uma cultura sensível a variações de umidade do solo. Excesso ou falta de água, podem prejudicar o crescimento das raízes, reduzir o rendimento e afetar a qualidade do tubérculo.
 
 Com a crescente demanda por produtividade, sustentabilidade e qualidade agrícola, surge a necessidade de ferramentas modernas que possibilitem monitoramento contínuo e decisões estratégicas baseadas em dados.
 
 ## Objetivo
 
-•	**Monitoramento:** Coletar dados de umidade do solo e temperatura em tempo real.<br>
+•	**Monitoramento:** Coletar dados de umidade do solo.<br>
 •	**Alertas:** Notificar produtores sobre condições fora do ideal.<br>
 •	**Análises:** Gerar relatórios históricos para planejamento da irrigação e colheita.<br>
 •	**Prevenção:** Reduzir perdas e proteger a qualidade da produção.<br>
