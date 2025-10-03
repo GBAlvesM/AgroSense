@@ -1,6 +1,6 @@
-CREATE DATABASE batatech;
+CREATE DATABASE AgroSense;
 
-USE batatech;
+USE AgroSense;
 
 CREATE TABLE cadastro(
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -9,7 +9,7 @@ email VARCHAR(100) NOT NULL UNIQUE,
 constraint chkemail CHECK(email LIKE "%@%"),
 senha VARCHAR(50) NOT NULL,
 telefone CHAR(15),
-dtCadastro DATETIME DEFAULT current_timestamp,
+dtCadastro DATE,
 cep char(9),
 numEndereco int,
 fkHectare int,
@@ -58,10 +58,10 @@ insert into sensores(identi,umidadeSolo)values
  cadastro.senha as 'Senha da Empresa',
  cadastro.telefone as 'Telefone da Empresa',
  cadastro.dtCadastro as 'Data de Cadastro',
- hectare.nomeHectare as 'Nome dos Hectares',
+ hectare.nomeHectare as 'Identificação dos Hectares',
  hectare.areaPlantada as 'Área Plantada(ha)',
  hectare.qtdPlantada as 'Quantidade Plantada(Kg)',
  sensores.identi as 'Identificação dos Sensores',
- sensores.umidadeSolo as 'Umidade do Solo'
+ sensores.umidadeSolo as 'Umidade do Solo(%)'
  from cadastro join hectare on fkHectare = idHectare
  join sensores on fkSensores = idSensor;
