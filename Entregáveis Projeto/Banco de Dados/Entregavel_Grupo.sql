@@ -12,10 +12,6 @@ telefone CHAR(15),
 dtCadastro DATE,
 cep char(9),
 numEndereco int,
-fkHectare int,
-constraint fkhectareRegra
-foreign key (fkhectare)
-references hectare(idHectare)
 );
 insert into cadastro(nomeEmpresa, email, senha, telefone, dtCadastro, cep, numEndereco, fkHectare) values
 ('v8Tech', 'v8tech@email.teste', 'v812345', '119876543213', '2025-02-12', '000000000', '45',1),
@@ -33,6 +29,10 @@ fkSensores INT,
 constraint fkSensoresRegra
 foreign key (fkSensores)
 references sensores(idSensor)
+fkCadastro int,
+constraint fkCadastroRegra
+    foreign key (fkCadastro)
+        references cadastro(idCadastro)
 );
 
 insert into hectare (nomeHectare,areaPlantada,qtdPlantada,fkSensores)values
