@@ -25,12 +25,12 @@ Com a crescente demanda por produtividade, sustentabilidade e qualidade agrícol
 •	**Eficiência:** Garantir crescimento saudável e maior produtividade.<br>
 
 ## Trello
-- **Plataforma de administração:** utilizamos a plataforma Trello para organizar tarefas e acompanhar o progresso do projeto, no link:(`https://trello.com/b/fyvdA3Ct/batatech`)
+- **Plataforma de administração:** utilizamos a plataforma Trello para organizar tarefas e acompanhar o progresso do projeto, no link:(`https://trello.com/b/fyvdA3Ct/agrosense`)
 
 ## Contribuição
 
 Para contribuir com este projeto:
-1. Primeiro clone o repositório: (`git clone https://github.com/GBAlvesM/BataTech.git`)
+1. Primeiro clone o repositório: (`git clone https://github.com/GBAlvesM/AgroSense.git`)
 2. Todos os dias execute o comando para atualizar o repositório com: (`git pull`)
 3. Faça as alterações necessárias e empacote com: (`git add .`)
 4. Coloque uma mensagem no commit com: (`git commit -m "nome_da_alteração"`)
