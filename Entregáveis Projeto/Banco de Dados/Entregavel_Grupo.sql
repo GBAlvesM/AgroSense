@@ -8,16 +8,17 @@ nomeEmpresa VARCHAR(75),
 email VARCHAR(100) NOT NULL UNIQUE,
 constraint chkemail CHECK(email LIKE "%@%"),
 senha VARCHAR(50) NOT NULL,
-telefone CHAR(15),
+telefone CHAR(11),
 dtCadastro DATE,
 cep char(9),
-numEndereco int,
+numEndereco int		
 );
-insert into cadastro(nomeEmpresa, email, senha, telefone, dtCadastro, cep, numEndereco, fkHectare) values
-('v8Tech', 'v8tech@email.teste', 'v812345', '119876543213', '2025-02-12', '000000000', '45',1),
-('C6 Bank', 'c6bank@email.teste','c612345', '119876543214', '2025-08-02', '000000001', '46',2),
-('Bradesco', 'bradesco@email.com', 'bra12345', '119876543215', '2025-05-21', '000000002', '47',3),
-('ToTvs', 'ToTvs@email.com', 'totvs12345', '119876543216', '2025-07-30', '000000003', '48',4);
+
+insert into cadastro(nomeEmpresa, email, senha, telefone, dtCadastro, cep, numEndereco) values
+('v8Tech', 'v8tech@email.teste', 'v812345', '11987654121', '2025-02-12', '000000000', '45'),
+('C6 Bank', 'c6bank@email.teste','c612345', '11987654321', '2025-08-02', '000000001', '46'),
+('Bradesco', 'bradesco@email.com', 'bra12345', '11987654321', '2025-05-21', '000000002', '47'),
+('ToTvs', 'ToTvs@email.com', 'totvs12345', '11987654321', '2025-07-30', '000000003', '48');
 
 
 CREATE TABLE hectare (
@@ -28,11 +29,11 @@ qtdPlantada INT NOT NULL,
 fkSensores INT,
 constraint fkSensoresRegra
 foreign key (fkSensores)
-references sensores(idSensor)
+references sensores(idSensor),
 fkCadastro int,
 constraint fkCadastroRegra
     foreign key (fkCadastro)
-        references cadastro(idCadastro)
+        references cadastro(idUsuario)
 );
 
 insert into hectare (nomeHectare,areaPlantada,qtdPlantada,fkSensores)values
@@ -65,3 +66,4 @@ insert into sensores(identi,umidadeSolo)values
  sensores.umidadeSolo as 'Umidade do Solo(%)'
  from cadastro join hectare on fkHectare = idHectare
  join sensores on fkSensores = idSensor;
+ 
