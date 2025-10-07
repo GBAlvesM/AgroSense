@@ -9,16 +9,17 @@ email VARCHAR(100) NOT NULL UNIQUE,
 constraint chkemail CHECK(email LIKE "%@%"),
 senha VARCHAR(50) NOT NULL,
 telefone CHAR(11),
+cnpj char(11),
 dtCadastro DATE,
 cep char(9),
 numEndereco int		
 );
 
-insert into cadastro(nomeEmpresa, email, senha, telefone, dtCadastro, cep, numEndereco) values
-('v8Tech', 'v8tech@email.teste', 'v812345', '11987654121', '2025-02-12', '000000000', '45'),
-('C6 Bank', 'c6bank@email.teste','c612345', '11987654321', '2025-08-02', '000000001', '46'),
-('Bradesco', 'bradesco@email.com', 'bra12345', '11987654321', '2025-05-21', '000000002', '47'),
-('ToTvs', 'ToTvs@email.com', 'totvs12345', '11987654321', '2025-07-30', '000000003', '48');
+insert into cadastro(nomeEmpresa, email, senha, telefone, cnpj, dtCadastro, cep, numEndereco) values
+('v8Tech', 'v8tech@email.teste', 'v812345', '11987654121', '12345678900001', '2025-02-12', '000000000', '45'),
+('C6 Bank', 'c6bank@email.teste','c612345', '11987654321',  '43345678900004','2025-08-02', '000000001', '46'),
+('Bradesco', 'bradesco@email.com', 'bra12345', '11987654321',  '12345678940007','2025-05-21', '000000002', '47'),
+('ToTvs', 'ToTvs@email.com', 'totvs12345', '11987654321', '12345678904509' ,'2025-07-30', '000000003', '48');
 
 
 CREATE TABLE hectare (
