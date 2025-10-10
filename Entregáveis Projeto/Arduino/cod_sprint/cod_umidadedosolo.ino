@@ -1,4 +1,4 @@
-const int PINO_SENSOR_UMIDADE_SOLO = A0;
+const int PINO_SENSOR_UMIDADE_SOLO = A5;
 
 void setup() {
   Serial.begin(9600);
@@ -14,3 +14,4 @@ void loop() {
 
   delay(2000);
 }
+
