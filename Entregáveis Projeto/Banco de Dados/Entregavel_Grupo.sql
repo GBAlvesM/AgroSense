@@ -23,34 +23,32 @@ CONSTRAINT fkUsuario FOREIGN KEY(fkUsuario) REFERENCES usuario(idUsuario)
 );
 
 
-CREATE TABLE subAreas(
+CREATE TABLE subArea(
 idSubArea INT,
 nomeArea VARCHAR(45),
 fkHectare int,
-CONSTRAINT fkHectare FOREIGN KEY(fkSubHectare) REFERENCES hectare(idHectare)
+PRIMARY KEY (idSubArea, fkHectare),
+CONSTRAINT fkHectare FOREIGN KEY(fkHectare) REFERENCES hectare(idHectare)
 );
 
-CREATE TABLE sensores(
-idSensores INT PRIMARY KEY AUTO_INCREMENT,
-fkSubAreas INT, 
-CONSTRAINT fkSubArea FOREIGN KEY(fkSubAreas) REFERENCES subAreas(idSubArea),
-fkSubAreaHect INT,
-CONSTRAINT fkSubAreaHect FOREIGN KEY (fkSubAreaHect) REFERENCES subAreas(fkHectare),
+CREATE TABLE sensor(
+idSensor INT PRIMARY KEY AUTO_INCREMENT,
+subArea_id INT, 
+CONSTRAINT fkSubAreaSensor FOREIGN KEY(subArea_id) REFERENCES subArea(idSubArea),
+fkSubHect INT,
+CONSTRAINT fkSubAreaHectRegra FOREIGN KEY (fkSubHect) REFERENCES subArea(fkHectare),
 dtInstalacao DATE
 );
 
 CREATE TABLE medicao(
 idMedicao INT PRIMARY KEY AUTO_INCREMENT,
-umidade INT,
+umidade DECIMAL(4,1),
 fksensor INT,
-CONSTRAINT fkMedicaoSensor FOREIGN KEY(fksensor) REFERENCES sensores(idSensores),
+CONSTRAINT fkMedicaoSensor FOREIGN KEY(fksensor) REFERENCES sensor(idSensor),
 dtMedicao DATETIME
 );
 
 
-
-
-show tables;
 
 
 
