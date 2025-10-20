@@ -1,24 +1,31 @@
+USE agrosense;
+
+CREATE TABLE empresa(
+idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+nomeEmpresa VARCHAR(75) NOT NULL,
+cnpj CHAR(14) NOT NULL,
+codAtivacao VARCHAR(15),
+dtCadastro DATETIME DEFAULT CURRENT_TIMESTAMP 
+);
+
 CREATE TABLE usuario(
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-nomeEmpresa VARCHAR(75),
+nome VARCHAR(45),
+cpf  VARCHAR(11),
 email VARCHAR(100) NOT NULL UNIQUE,
 CONSTRAINT chkEmail CHECK(email LIKE '%@%'),
 senha VARCHAR(50) NOT NULL,
-telefone CHAR(11),
-cnpj CHAR(14),
-dtCadastro DATE,
-cep CHAR(9),
-numEndereco INT
+fkEmpresaUser INT,
+CONSTRAINT fkEmpresaUsuario FOREIGN KEY(fkEmpresaUser)REFERENCES empresa(idEmpresa)
 );
 
 CREATE TABLE hectare(
 idHectare INT PRIMARY KEY AUTO_INCREMENT,
 nomeHectare VARCHAR(45) NOT NULL,
 kgPlantada INT NOT NULL,
-fkUsuario INT,
-CONSTRAINT fkUsuario FOREIGN KEY(fkUsuario) REFERENCES usuario(idUsuario)
+fkEmpresaHect INT,
+CONSTRAINT fkEmpresaHectare FOREIGN KEY(fkEmpresaHect) REFERENCES empresa(idEmpresa)
 );
-
 
 CREATE TABLE subArea(
 idSubArea INT,
@@ -46,13 +53,21 @@ dtMedicao DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 -- --------------------------------------- INSERT DAS TABELAS -----------------------------------------
 
-INSERT INTO usuario(nomeEmpresa, email, senha, telefone, cnpj, dtCadastro, cep, numEndereco) VALUES
-('v8Tech', 'v8tech@email.teste', 'v812345', '11987654121', '12345678900001', '2025-02-12', '000000000', '45'),
-('C6 Bank', 'c6bank@email.teste','c612345', '11987654321',  '43345678900004','2025-08-02', '000000001', '46'),
-('Bradesco', 'bradesco@email.com', 'bra12345', '11987654321',  '12345678940007','2025-05-21', '000000002', '47'),
-('ToTvs', 'ToTvs@email.com', 'totvs12345', '11987654321', '12345678904509' ,'2025-07-30', '000000003', '48');
 
-INSERT INTO hectare(nomeHectare,kgPlantada,fkUsuario) VALUES
+INSERT INTO empresa(nomeEmpresa, cnpj,codAtivacao, dtCadastro) VALUES
+('v8Tech',  '12345678900001', 'v812345', '2025-02-12'),
+('C6 Bank','43345678900004','c612345','2025-08-02'),
+('Bradesco','12345678940007','bra12345','2025-05-21'),
+('ToTvs','12345678904509','totvs12345','2025-07-30');
+
+INSERT INTO usuario(nome,cpf,email,senha,fkEmpresaUser) VALUES
+('Pablo','44072454322','Pablo@gmail.com','123456789',1),
+('Fagner','32425069251','Fagner@gmail.com','987654321',3),
+('Arthur','45623678901','Arthur@gmail.com','23456789',1),
+('Ricardo','75261248902','Ricardo@gmail.com','98765432',4),
+('Cesar','45215693219','Cesar@gmail.com','34567891',2);
+
+INSERT INTO hectare(nomeHectare,kgPlantada,fkEmpresaHect) VALUES
 ('Hectare 1', 400, 3),
 ('Hectare 1', 450, 4),
 ('Hectare 1', 600, 1),
@@ -89,24 +104,20 @@ INSERT INTO medicao(fksensor, umidade) VALUES
 (8, 10);
 
 SELECT
-e.nomeEmpresa,
-h.nomeHectare,
-h.kgPlantada,
-sa.nomeArea,
-s.idSensor,
+e.nomeEmpresa as Empresa,
+f.nome as 'Funcionário Responsável',
+h.nomeHectare as Hectare,
+CONCAT(h.kgPlantada, 'kg') as 'KgPlantadas',
+sa.nomeArea as Área,
+s.idSensor as Sensor,
 -- m.umidade,
-s.dtInstalacao
+s.dtInstalacao as 'Data de Instalação'
 FROM  sensor as s
 JOIN 
     subArea as sa ON s.subArea_id = sa.idSubArea AND s.fkSubHect = sa.fkHectare
 JOIN 
     hectare AS h ON sa.fkHectare = h.idHectare
 JOIN 
-usuario as e on e.idUsuario = h.fkUsuario;
-
-
-
-
-
-
-
+empresa as e on e.idEmpresa = h.fkEmpresaHect
+JOIN
+usuario as f on idEmpresa = f.fkEmpresaUser;
